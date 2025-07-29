@@ -5,8 +5,7 @@ from flask import Flask
 from PyPDF2 import PdfReader
 from PIL import Image
 
-print("!!!!!!!!!We back mff. lets get started!!!")
-app = Flask(__name__)
+sapp = Flask(__name__)
 
 def main():
     opener = open("text.txt", "r")

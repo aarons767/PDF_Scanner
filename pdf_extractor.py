@@ -5,18 +5,10 @@ import fitz
 import tkinter as tk
 from tkinter import filedialog
 
-native_pdf = "./resume.pdf"
 
 
 def main():
-    prompter()
-
-def display():
-    pyreader = PdfReader(native_pdf)
-    string_of_pdf = '' 
-
-    for page in range(len(pyreader.pages)):
-        string_of_pdf   += pyreader.pages[page].extract_text()
+    prompter()    
 
 def prompter():
     window = tk.Tk()
@@ -27,8 +19,15 @@ def prompter():
         title="Select a file you want to conver to text",
         filetypes=[("PDF files", "*.pdf")]
     )
+
     native_pdf = filepath
-    display()
+    pyreader = PdfReader(native_pdf)
+    string_of_pdf = '' 
+
+    for page in range(len(pyreader.pages)):
+        string_of_pdf   += pyreader.pages[page].extract_text()
+    print(string_of_pdf)
+
 
 if __name__=='__main__':
     main()
