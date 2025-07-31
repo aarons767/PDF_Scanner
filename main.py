@@ -5,7 +5,7 @@ from flask import Flask
 from PyPDF2 import PdfReader
 from PIL import Image
 
-sapp = Flask(__name__)
+app = Flask(__name__)
 
 def main():
     opener = open("text.txt", "r")
@@ -22,6 +22,7 @@ def home():
     return "Hi from Fask on my Mac!"
 
 if __name__ == "__main__":
+    main()
     app.run()
 
 
